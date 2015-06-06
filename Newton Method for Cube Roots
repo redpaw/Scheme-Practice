@@ -1,0 +1,7 @@
+(define (betterguess guess x)
+    ( / ( +( / x ( * guess guess))(* 2 guess)) 3 ))
+
+    (define (cuberoot guess x prec) 
+    (if ( < ( * ( - ( * guess guess guess) x ) ( - ( * guess guess guess) x ))  (* prec prec))
+      guess
+      (cuberoot (betterguess guess x) x prec) ) )
