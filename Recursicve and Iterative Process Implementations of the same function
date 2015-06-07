@@ -1,0 +1,26 @@
+
+#Iterative
+
+(define (solve-iter a b c d e count n)
+ ( = count ( + count 1))
+ ( = d b) 
+ ( = e c)
+ ( = c b)
+ (= b a)
+ (= a ( + a (* 2 d) (* 3 e)))
+ (if ( = count n)
+ a 
+ b))
+ 
+ (define (solve n)
+ (if (< n 4)
+n 
+(solve-iter 3 2 1  0 0 3 n))) 
+
+
+#Recursive 
+
+(define (rsolve n)
+(if (< n 4)
+n
+(+ ( rsolve (- n 1)) (* (rsolve ( - n 2)) 2 ) (* ( solve ( - n 3)) 3 ))))
