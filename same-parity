@@ -1,0 +1,15 @@
+ (define (same-parity first . rest)
+   
+  (define (filter x)
+    (if (even? x)
+     even? 
+     (odd?)))
+    (define (iter items result)
+    (display result)
+    (cond ((null? items) (reverse result))
+          (((filter first) (car items)) (iter (cdr items) (cons (car items) result)))
+          (else (iter (cdr items) result))))
+          
+    (iter rest (cons first '())))     
+
+  
