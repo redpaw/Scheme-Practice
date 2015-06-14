@@ -1,0 +1,8 @@
+
+(define (deep-reverse a) 
+  (define (list-or-value items)
+    (if (pair? items)
+        (deep-reverse items) 
+         items))
+  (cond ((null? a) a)   
+        (else (append (deep-reverse (cdr a))( list (list-or-value (car a)))))))
