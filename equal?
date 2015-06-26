@@ -1,0 +1,6 @@
+(define (equals? list-a list-b)
+  (if (and (null? list-a) (null? list-b))
+      '()
+   (if (and (eq? (car list-a) (car list-b)) (equals? (cdr list-a) (cdr list-b)))
+       #t
+       #f)))
